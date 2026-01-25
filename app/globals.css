@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .text-muted-foreground {
+    color: #FF9900 !important;
+  }
+
+  .cod-text {
+    font-family: sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    -webkit-text-stroke: 0.2px #26e005;
+    /* Light Gray stroke */
+  }
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -15,7 +29,8 @@
     --secondary: 240 4.8% 95.9%;
     --secondary-foreground: 240 5.9% 10%;
     --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
+    --muted-foreground: 36 94% 57%;
+    /* User requested Orange */
     --accent: 240 4.8% 95.9%;
     --accent-foreground: 240 5.9% 10%;
     --destructive: 0 84.2% 60.2%;
@@ -38,7 +53,8 @@
     --secondary: 240 3.7% 15.9%;
     --secondary-foreground: 0 0% 98%;
     --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
+    --muted-foreground: 36 94% 57%;
+    /* User requested Orange */
     --accent: 240 3.7% 15.9%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
@@ -53,8 +69,54 @@
   * {
     @apply border-border;
   }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-transparent;
+    color: #FF9900;
+    /* User requested #FF9900 */
+    /* Transparent bg to show animated bg, white text */
+    font-family: var(--font-space-mono), monospace;
     font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-sora), sans-serif;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+
+    /* Global Gradient Text Style */
+    background: linear-gradient(90deg, #ec38bc, #7303c0, #03001e);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradientWallpaper 20s ease-in-out infinite;
+  }
+}
+
+.animated-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: url("/images/background.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  /* Ensures true wallpaper feel */
+
+  /* Add a sophisticated dark overlay to ensure text pops */
+  box-shadow: inset 0 0 0 100vmax rgba(0, 0, 0, 0.75);
+  filter: brightness(0.7) contrast(1.1);
+  /* Tweaks to make it look "pyara" (premium) */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animated-bg {
+    animation: none;
   }
 }

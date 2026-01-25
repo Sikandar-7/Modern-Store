@@ -3,10 +3,17 @@
         "id": "1",
         "name": "Premium Wireless Headphones",
         "description": "High-quality wireless headphones with active noise cancellation, 30-hour battery life, and premium sound quality. Perfect for music lovers and professionals.",
-        "price": 199.99,
+        "price": 5500,
+        "originalPrice": 8000,
+        "colors": [
+            "Matte Black",
+            "White",
+            "Navy Blue"
+        ],
         "images": [
-            "/images/products/headphones-1.jpg",
-            "/images/products/headphones-2.jpg"
+            "/images/products/small-1.jpeg",
+            "/images/products/small-2.jpeg",
+            "/images/products/small-3.jpeg"
         ],
         "category": "Electronics",
         "inStock": true,
@@ -16,7 +23,13 @@
         "id": "2",
         "name": "Smart Watch Pro",
         "description": "Advanced fitness tracking, heart rate monitoring, GPS, and smartphone notifications. Water-resistant with 7-day battery life.",
-        "price": 299.99,
+        "price": 8500,
+        "originalPrice": 12000,
+        "colors": [
+            "Black",
+            "Silver",
+            "Rose Gold"
+        ],
         "images": [
             "/images/products/smartwatch-1.jpg",
             "/images/products/smartwatch-2.jpg"
@@ -24,135 +37,5 @@
         "category": "Electronics",
         "inStock": true,
         "featured": true
-    },
-    {
-        "id": "3",
-        "name": "Leather Messenger Bag",
-        "description": "Handcrafted genuine leather messenger bag with multiple compartments. Perfect for work or travel. Fits 15-inch laptop.",
-        "price": 149.99,
-        "images": [
-            "/images/products/bag-1.jpg",
-            "/images/products/bag-2.jpg"
-        ],
-        "category": "Fashion",
-        "inStock": true,
-        "featured": false
-    },
-    {
-        "id": "4",
-        "name": "Minimalist Desk Lamp",
-        "description": "Modern LED desk lamp with adjustable brightness and color temperature. USB charging port included. Energy efficient.",
-        "price": 79.99,
-        "images": [
-            "/images/products/lamp-1.jpg",
-            "/images/products/lamp-2.jpg"
-        ],
-        "category": "Home & Living",
-        "inStock": true,
-        "featured": true
-    },
-    {
-        "id": "5",
-        "name": "Wireless Keyboard & Mouse Set",
-        "description": "Ergonomic wireless keyboard and mouse combo. Quiet keys, long battery life, and universal compatibility.",
-        "price": 89.99,
-        "images": [
-            "/images/products/keyboard-1.jpg",
-            "/images/products/keyboard-2.jpg"
-        ],
-        "category": "Electronics",
-        "inStock": true,
-        "featured": false
-    },
-    {
-        "id": "6",
-        "name": "Cotton T-Shirt Pack",
-        "description": "Pack of 3 premium cotton t-shirts. Soft, breathable, and durable. Available in multiple colors.",
-        "price": 39.99,
-        "images": [
-            "/images/products/tshirt-1.jpg",
-            "/images/products/tshirt-2.jpg"
-        ],
-        "category": "Fashion",
-        "inStock": true,
-        "featured": false
-    },
-    {
-        "id": "7",
-        "name": "Portable Bluetooth Speaker",
-        "description": "Waterproof portable speaker with 360° sound, 12-hour battery, and built-in microphone for calls.",
-        "price": 69.99,
-        "images": [
-            "/images/products/speaker-1.jpg",
-            "/images/products/speaker-2.jpg"
-        ],
-        "category": "Electronics",
-        "inStock": true,
-        "featured": true
-    },
-    {
-        "id": "8",
-        "name": "Ceramic Coffee Mug Set",
-        "description": "Set of 4 handcrafted ceramic mugs. Microwave and dishwasher safe. Perfect for coffee, tea, or hot chocolate.",
-        "price": 34.99,
-        "images": [
-            "/images/products/mug-1.jpg",
-            "/images/products/mug-2.jpg"
-        ],
-        "category": "Home & Living",
-        "inStock": true,
-        "featured": false
-    },
-    {
-        "id": "9",
-        "name": "Running Shoes",
-        "description": "Lightweight running shoes with cushioned sole and breathable mesh. Ideal for daily runs and workouts.",
-        "price": 119.99,
-        "images": [
-            "/images/products/shoes-1.jpg",
-            "/images/products/shoes-2.jpg"
-        ],
-        "category": "Fashion",
-        "inStock": true,
-        "featured": false
-    },
-    {
-        "id": "10",
-        "name": "Yoga Mat Premium",
-        "description": "Extra thick yoga mat with non-slip surface. Eco-friendly material, includes carrying strap.",
-        "price": 49.99,
-        "images": [
-            "/images/products/yoga-1.jpg",
-            "/images/products/yoga-2.jpg"
-        ],
-        "category": "Home & Living",
-        "inStock": true,
-        "featured": false
-    },
-    {
-        "id": "11",
-        "name": "Stainless Steel Water Bottle",
-        "description": "Insulated water bottle keeps drinks cold for 24 hours or hot for 12 hours. BPA-free, leak-proof design.",
-        "price": 29.99,
-        "images": [
-            "/images/products/bottle-1.jpg",
-            "/images/products/bottle-2.jpg"
-        ],
-        "category": "Home & Living",
-        "inStock": true,
-        "featured": false
-    },
-    {
-        "id": "12",
-        "name": "USB-C Hub Adapter",
-        "description": "7-in-1 USB-C hub with HDMI, USB 3.0 ports, SD card reader, and power delivery. Perfect for laptops.",
-        "price": 44.99,
-        "images": [
-            "/images/products/hub-1.jpg",
-            "/images/products/hub-2.jpg"
-        ],
-        "category": "Electronics",
-        "inStock": true,
-        "featured": false
     }
 ]

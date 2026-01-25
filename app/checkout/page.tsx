@@ -35,7 +35,7 @@ export default function CheckoutPage() {
 ${cartItems
                 .map(
                     ({ product, quantity }) =>
-                        `- ${product.name} x${quantity} = ${formatPrice(product.price * quantity)}`
+                        `- ${product.name} ${product.selectedColor ? `(${product.selectedColor})` : ''} x${quantity} = ${formatPrice(product.price * quantity)}`
                 )
                 .join("\n")}
 
@@ -76,7 +76,7 @@ Please confirm my order. Thank you!`;
                     <div className="pt-4">
                         <a
                             href="/"
-                            className="text-primary hover:underline font-medium"
+                            className="text-white hover:underline font-medium"
                         >
                             Continue Shopping
                         </a>
@@ -98,7 +98,7 @@ Please confirm my order. Thank you!`;
 
                 {/* Order Summary */}
                 <div className="lg:col-span-1">
-                    <Card className="sticky top-20">
+                    <Card className="sticky top-20 bg-white/5 backdrop-blur-md border-white/10">
                         <CardHeader>
                             <CardTitle>Order Summary</CardTitle>
                         </CardHeader>
@@ -109,10 +109,10 @@ Please confirm my order. Thank you!`;
                                         key={item.id}
                                         className="flex justify-between text-sm"
                                     >
-                                        <span className="text-muted-foreground">
-                                            {item.name} x{item.quantity}
+                                        <span className="text-white">
+                                            {item.name} {item.selectedColor ? `(${item.selectedColor})` : ''} x{item.quantity}
                                         </span>
-                                        <span className="font-medium">
+                                        <span className="font-medium text-white">
                                             {formatPrice(item.price * item.quantity)}
                                         </span>
                                     </div>
@@ -121,16 +121,16 @@ Please confirm my order. Thank you!`;
 
                             <div className="border-t pt-4 space-y-2">
                                 <div className="flex justify-between text-sm">
-                                    <span className="text-muted-foreground">Subtotal</span>
-                                    <span className="font-medium">{formatPrice(total)}</span>
+                                    <span className="text-white">Subtotal</span>
+                                    <span className="font-medium text-white">{formatPrice(total)}</span>
                                 </div>
                                 <div className="flex justify-between text-sm">
-                                    <span className="text-muted-foreground">Shipping</span>
-                                    <span className="font-medium">FREE</span>
+                                    <span className="text-white">Shipping</span>
+                                    <span className="font-medium text-white">FREE</span>
                                 </div>
                                 <div className="flex justify-between items-center pt-2 border-t">
-                                    <span className="text-lg font-semibold">Total</span>
-                                    <span className="text-2xl font-bold">
+                                    <span className="text-lg font-semibold text-white">Total</span>
+                                    <span className="text-2xl font-bold text-white">
                                         {formatPrice(total)}
                                     </span>
                                 </div>

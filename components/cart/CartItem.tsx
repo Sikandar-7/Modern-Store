@@ -28,6 +28,11 @@ export default function CartItem({ item }: CartItemProps) {
 
             <div className="flex-1 min-w-0">
                 <h3 className="font-semibold text-lg mb-1 truncate">{item.name}</h3>
+                {item.selectedColor && (
+                    <p className="text-sm text-muted-foreground mb-1">
+                        Color: <span className="font-medium text-foreground">{item.selectedColor}</span>
+                    </p>
+                )}
                 <p className="text-sm text-muted-foreground mb-2">
                     {formatPrice(item.price)}
                 </p>
@@ -37,7 +42,7 @@ export default function CartItem({ item }: CartItemProps) {
                         variant="outline"
                         size="icon"
                         className="h-8 w-8"
-                        onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                        onClick={() => updateQuantity(item.id, item.quantity - 1, item.selectedColor)}
                     >
                         <Minus className="h-4 w-4" />
                     </Button>
@@ -46,7 +51,7 @@ export default function CartItem({ item }: CartItemProps) {
                         variant="outline"
                         size="icon"
                         className="h-8 w-8"
-                        onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                        onClick={() => updateQuantity(item.id, item.quantity + 1, item.selectedColor)}
                     >
                         <Plus className="h-4 w-4" />
                     </Button>
@@ -58,7 +63,7 @@ export default function CartItem({ item }: CartItemProps) {
                     variant="ghost"
                     size="icon"
                     className="h-8 w-8"
-                    onClick={() => removeFromCart(item.id)}
+                    onClick={() => removeFromCart(item.id, item.selectedColor)}
                 >
                     <X className="h-4 w-4" />
                 </Button>

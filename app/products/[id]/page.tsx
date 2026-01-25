@@ -20,6 +20,10 @@ export default function ProductDetailPage() {
     const product = products.find((p) => p.id === id);
     const [quantity, setQuantity] = useState(1);
     const [selectedImage, setSelectedImage] = useState(0);
+    const [selectedColor, setSelectedColor] = useState<string | undefined>(
+        product?.colors?.[0]
+    );
+    const [showCheckout, setShowCheckout] = useState(false);
     const { addToCart } = useCart();
 
     if (!product) {
@@ -31,7 +35,8 @@ export default function ProductDetailPage() {
         .slice(0, 4);
 
     const handleAddToCart = () => {
-        addToCart(product, quantity);
+        addToCart(product, quantity, selectedColor);
+        setShowCheckout(true);
     };
 
     return (
@@ -104,6 +109,27 @@ export default function ProductDetailPage() {
                         </p>
                     </div>
 
+                    {/* Color Selector */}
+                    {product.colors && product.colors.length > 0 && (
+                        <div className="space-y-3">
+                            <h3 className="font-semibold">Select Color: <span className="text-primary">{selectedColor}</span></h3>
+                            <div className="flex flex-wrap gap-2">
+                                {product.colors.map((color) => (
+                                    <button
+                                        key={color}
+                                        onClick={() => setSelectedColor(color)}
+                                        className={`px-4 py-2 rounded-md border text-sm font-medium transition-all ${selectedColor === color
+                                            ? "border-primary bg-primary text-primary-foreground ring-2 ring-primary ring-offset-2"
+                                            : "border-input bg-background hover:bg-accent hover:text-accent-foreground"
+                                            }`}
+                                    >
+                                        {color}
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+
                     {/* Quantity Selector */}
                     <div className="space-y-3">
                         <h3 className="font-semibold">Quantity</h3>
@@ -141,9 +167,20 @@ export default function ProductDetailPage() {
                             <ShoppingCart className="mr-2 h-5 w-5" />
                             Add to Cart
                         </Button>
+                        {showCheckout && (
+                            <Link href="/checkout">
+                                <Button
+                                    size="lg"
+                                    className="w-full bg-primary hover:bg-primary/90"
+                                >
+                                    Proceed to Checkout
+                                </Button>
+                            </Link>
+                        )}
                         <WhatsAppButton
                             product={product}
                             quantity={quantity}
+                            selectedColor={selectedColor}
                             variant="outline"
                             className="w-full"
                         />

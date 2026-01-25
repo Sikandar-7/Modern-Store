@@ -3,6 +3,8 @@ export interface Product {
     name: string;
     description: string;
     price: number;
+    originalPrice?: number;
+    colors?: string[];
     images: string[];
     category: string;
     inStock: boolean;
@@ -11,6 +13,7 @@ export interface Product {
 
 export interface CartItem extends Product {
     quantity: number;
+    selectedColor?: string;
 }
 
 export interface CheckoutFormData {

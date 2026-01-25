@@ -8,9 +8,9 @@ export function generateWhatsAppLink(
     const message = `Hi! I'd like to order:
 
 Product: ${product.name}
-Price: $${product.price}
+Price: Rs. ${product.price}
 Quantity: ${quantity}
-Total: $${(product.price * quantity).toFixed(2)}
+Total: Rs. ${(product.price * quantity).toFixed(0)}
 
 Payment: Cash on Delivery (COD)`;
 
@@ -19,13 +19,13 @@ Payment: Cash on Delivery (COD)`;
 
 export function generateWhatsAppLinkForCart(
     phone: string,
-    cartItems: Array<{ product: Product; quantity: number }>,
+    cartItems: Array<Product & { quantity: number; selectedColor?: string }>,
     total: number
 ): string {
     const itemsList = cartItems
         .map(
-            ({ product, quantity }) =>
-                `- ${product.name} x${quantity} = $${(product.price * quantity).toFixed(2)}`
+            (item) =>
+                `- ${item.name} ${item.selectedColor ? `(${item.selectedColor})` : ''} x${item.quantity} = Rs. ${(item.price * item.quantity).toFixed(0)}`
         )
         .join("\n");
 
@@ -33,7 +33,7 @@ export function generateWhatsAppLinkForCart(
 
 ${itemsList}
 
-Total: $${total.toFixed(2)}
+Total: Rs. ${total.toFixed(0)}
 
 Payment: Cash on Delivery (COD)
 

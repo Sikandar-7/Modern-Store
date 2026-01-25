@@ -19,26 +19,53 @@ export default function Navbar() {
         <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
             <div className="container mx-auto px-4">
                 <div className="flex h-16 items-center justify-between">
-                    {/* Logo */}
-                    <Link href="/" className="text-2xl font-bold">
+                    {/* Left: Brand + COD Badge */}
+                    <div className="flex items-center gap-4">
+                        {/* Left Brand */}
+                        <Link href="/" className="text-2xl font-bold" style={{ fontFamily: 'var(--font-sora), sans-serif' }}>
+                            Love & Joy
+                        </Link>
+
+                        {/* COD Badge */}
+                        <div className="hidden sm:inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/10 px-3 py-1.5 rounded-full shadow-sm hover:bg-white/20 transition-colors cursor-default">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="#8cfc03"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                className="lucide lucide-truck"
+                            >
+                                <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2" />
+                                <path d="M15 18H9" />
+                                <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14" />
+                                <circle cx="17" cy="18" r="2" />
+                                <circle cx="7" cy="18" r="2" />
+                            </svg>
+                            <span className=" text-[#8cfc03] text-xs animate-pulse-slow cod-text">
+                                COD available
+                            </span>
+                        </div>
+                    </div>
+
+                    {/* Center: Brand Logo/Text */}
+                    <Link href="/" className="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl font-bold heading-border border-none">
                         Love & Joy
                     </Link>
 
-                    {/* Desktop Navigation */}
-                    <div className="hidden md:flex items-center gap-6">
-                        {categories.map((category) => (
-                            <Link
-                                key={category}
-                                href={`/products?category=${encodeURIComponent(category)}`}
-                                className="text-sm font-medium transition-colors hover:text-primary"
-                            >
-                                {category}
-                            </Link>
-                        ))}
-                    </div>
-
                     {/* Right Side Icons */}
                     <div className="flex items-center gap-4">
+                        {/* Products Link */}
+                        <Link href="/products">
+                            <Button variant="ghost" className="text-sm font-medium hover:text-primary">
+                                Products
+                            </Button>
+                        </Link>
+
                         {/* WhatsApp Link */}
                         <a
                             href="https://wa.me/923264379003"

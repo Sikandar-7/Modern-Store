@@ -31,14 +31,14 @@ export default function CheckoutForm({ onSubmit }: CheckoutFormProps) {
     });
 
     return (
-        <Card>
+        <Card className="bg-white/5 backdrop-blur-md border-white/10">
             <CardHeader>
                 <CardTitle>Delivery Information</CardTitle>
             </CardHeader>
             <CardContent>
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
                     <div className="space-y-2">
-                        <Label htmlFor="name">Full Name *</Label>
+                        <Label htmlFor="name" className="text-white">Full Name *</Label>
                         <Input
                             id="name"
                             {...register("name")}
@@ -50,7 +50,7 @@ export default function CheckoutForm({ onSubmit }: CheckoutFormProps) {
                     </div>
 
                     <div className="space-y-2">
-                        <Label htmlFor="phone">Phone Number *</Label>
+                        <Label htmlFor="phone" className="text-white">Phone Number *</Label>
                         <Input
                             id="phone"
                             type="tel"
@@ -63,7 +63,7 @@ export default function CheckoutForm({ onSubmit }: CheckoutFormProps) {
                     </div>
 
                     <div className="space-y-2">
-                        <Label htmlFor="address">Delivery Address *</Label>
+                        <Label htmlFor="address" className="text-white">Delivery Address *</Label>
                         <Input
                             id="address"
                             {...register("address")}
@@ -77,7 +77,7 @@ export default function CheckoutForm({ onSubmit }: CheckoutFormProps) {
                     </div>
 
                     <div className="space-y-2">
-                        <Label htmlFor="city">City *</Label>
+                        <Label htmlFor="city" className="text-white">City *</Label>
                         <Input
                             id="city"
                             {...register("city")}
@@ -89,7 +89,7 @@ export default function CheckoutForm({ onSubmit }: CheckoutFormProps) {
                     </div>
 
                     <div className="space-y-2">
-                        <Label htmlFor="notes">Order Notes (Optional)</Label>
+                        <Label htmlFor="notes" className="text-white">Order Notes (Optional)</Label>
                         <Input
                             id="notes"
                             {...register("notes")}
@@ -100,7 +100,7 @@ export default function CheckoutForm({ onSubmit }: CheckoutFormProps) {
                     <div className="bg-muted p-4 rounded-lg">
                         <p className="text-sm font-medium mb-2">Payment Method</p>
                         <div className="flex items-center gap-2">
-                            <div className="h-4 w-4 rounded-full border-2 border-primary bg-primary"></div>
+                            <div className="h-4 w-4 rounded-full bg-[#8cfc03] animate-pulse-slow"></div>
                             <span className="font-semibold">Cash on Delivery (COD)</span>
                         </div>
                         <p className="text-sm text-muted-foreground mt-2">
