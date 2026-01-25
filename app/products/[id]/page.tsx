@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { notFound } from "next/navigation";
+import { notFound, useParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { Minus, Plus, ShoppingCart, ArrowLeft } from "lucide-react";
@@ -14,12 +14,10 @@ import { useCart } from "@/context/CartContext";
 import { formatPrice } from "@/lib/utils";
 import products from "@/lib/data/products.json";
 
-export default function ProductDetailPage({
-    params,
-}: {
-    params: { id: string };
-}) {
-    const product = products.find((p) => p.id === params.id);
+export default function ProductDetailPage() {
+    const params = useParams();
+    const id = typeof params?.id === 'string' ? params.id : '';
+    const product = products.find((p) => p.id === id);
     const [quantity, setQuantity] = useState(1);
     const [selectedImage, setSelectedImage] = useState(0);
     const { addToCart } = useCart();
@@ -29,7 +27,7 @@ export default function ProductDetailPage({
     }
 
     const relatedProducts = products
-        .filter((p) => p.category === product.category && p.id !== product.id)
+        .filter((p) => p.category === product.category && p.id !== id)
         .slice(0, 4);
 
     const handleAddToCart = () => {
@@ -67,8 +65,8 @@ export default function ProductDetailPage({
                                     key={index}
                                     onClick={() => setSelectedImage(index)}
                                     className={`relative aspect-square rounded-md overflow-hidden bg-muted border-2 transition-colors ${selectedImage === index
-                                            ? "border-primary"
-                                            : "border-transparent"
+                                        ? "border-primary"
+                                        : "border-transparent"
                                         }`}
                                 >
                                     <Image
