@@ -17,10 +17,7 @@ export default function Home() {
       {/* 1. Hero Section */}
       <HeroSection />
 
-      {/* 2. Trust Badges */}
-      <TrustSection />
-
-      {/* 3. Featured Products */}
+      {/* 2. Featured Products */}
       <section className="py-8 md:py-16 bg-muted/5">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between mb-8">
@@ -54,6 +51,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* 3. Trust Badges */}
+      <TrustSection />
 
       {/* 4. Instagram Feed */}
       <InstagramFeed />

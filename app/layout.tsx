@@ -53,6 +53,10 @@ export default function RootLayout({
         <div className="animated-bg"></div>
         <CartProvider>
           <div className="flex min-h-screen flex-col">
+            {/* Announcement Bar */}
+            <div className="w-full bg-[#8cfc03] text-black text-center py-2 text-sm font-bold tracking-wide">
+              🎉 Free Delivery on all orders above Rs. 6,000! 🚚
+            </div>
             <Navbar />
             <main className="flex-1">{children}</main>
             <Footer />

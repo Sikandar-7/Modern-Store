@@ -18,7 +18,7 @@ export default function CartItem({ item }: CartItemProps) {
         <div className="flex gap-4 py-4 border-b">
             <div className="relative w-24 h-24 flex-shrink-0 rounded-md overflow-hidden bg-muted">
                 <Image
-                    src={item.images[0]}
+                    src={item.images?.[0] || '/placeholder.jpg'}
                     alt={item.name}
                     fill
                     className="object-cover"
@@ -27,13 +27,13 @@ export default function CartItem({ item }: CartItemProps) {
             </div>
 
             <div className="flex-1 min-w-0">
-                <h3 className="font-semibold text-lg mb-1 truncate">{item.name}</h3>
+                <h3 className="font-semibold text-lg mb-1 truncate text-white">{item.name}</h3>
                 {item.selectedColor && (
-                    <p className="text-sm text-muted-foreground mb-1">
-                        Color: <span className="font-medium text-foreground">{item.selectedColor}</span>
+                    <p className="text-sm text-gray-300 mb-1">
+                        Color: <span className="font-medium text-white">{item.selectedColor}</span>
                     </p>
                 )}
-                <p className="text-sm text-muted-foreground mb-2">
+                <p className="text-sm text-gray-300 mb-2">
                     {formatPrice(item.price)}
                 </p>
 
@@ -67,7 +67,7 @@ export default function CartItem({ item }: CartItemProps) {
                 >
                     <X className="h-4 w-4" />
                 </Button>
-                <p className="font-bold text-lg">
+                <p className="font-bold text-lg text-white">
                     {formatPrice(item.price * item.quantity)}
                 </p>
             </div>

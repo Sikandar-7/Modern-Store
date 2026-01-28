@@ -24,27 +24,27 @@ export default function CartSummary() {
     };
 
     return (
-        <Card className="sticky top-20">
+        <Card className="sticky top-20 bg-white/10 backdrop-blur-md border-white/20">
             <CardContent className="p-6 space-y-4">
-                <h2 className="text-2xl font-bold">Order Summary</h2>
+                <h2 className="text-2xl font-bold text-white">Order Summary</h2>
 
                 <div className="space-y-2">
                     <div className="flex justify-between text-sm">
-                        <span className="text-muted-foreground">Items ({itemCount})</span>
-                        <span className="font-medium">{formatPrice(total)}</span>
+                        <span className="text-gray-300">Items ({itemCount})</span>
+                        <span className="font-medium text-white">{formatPrice(total)}</span>
                     </div>
                     <div className="flex justify-between text-sm">
-                        <span className="text-muted-foreground">Shipping</span>
-                        <span className="font-medium">FREE</span>
+                        <span className="text-gray-300">Shipping</span>
+                        <span className="font-medium text-white">FREE</span>
                     </div>
                 </div>
 
-                <div className="border-t pt-4">
+                <div className="border-t border-white/20 pt-4">
                     <div className="flex justify-between items-center mb-4">
-                        <span className="text-lg font-semibold">Total</span>
-                        <span className="text-2xl font-bold">{formatPrice(total)}</span>
+                        <span className="text-lg font-semibold text-white">Total</span>
+                        <span className="text-2xl font-bold text-white">{formatPrice(total)}</span>
                     </div>
-                    <Badge variant="secondary" className="w-full justify-center py-2">
+                    <Badge variant="secondary" className="w-full justify-center py-2 bg-green-500/20 text-green-300 border-green-500/30">
                         Cash on Delivery Available
                     </Badge>
                 </div>

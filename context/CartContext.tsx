@@ -2,6 +2,7 @@
 
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { Product, CartItem } from "@/types";
+import AddToCartPopup from "@/components/cart/AddToCartPopup";
 
 interface CartContextType {
     cart: CartItem[];
@@ -18,6 +19,10 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 export function CartProvider({ children }: { children: React.ReactNode }) {
     const [cart, setCart] = useState<CartItem[]>([]);
     const [isLoaded, setIsLoaded] = useState(false);
+
+    // Popup State
+    const [popupItem, setPopupItem] = useState<CartItem | null>(null);
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
 
     // Load cart from localStorage on mount
     useEffect(() => {
@@ -51,6 +56,14 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 
             return [...prevCart, { ...product, quantity, selectedColor }];
         });
+
+        // Trigger Popup
+        // Close first to ensure animation restarts if already open
+        setIsPopupOpen(false);
+        setTimeout(() => {
+            setPopupItem({ ...product, quantity, selectedColor });
+            setIsPopupOpen(true);
+        }, 10);
     };
 
     const removeFromCart = (productId: string, selectedColor?: string) => {
@@ -101,6 +114,12 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
             }}
         >
             {children}
+            {/* Global Add to Cart Notification */}
+            <AddToCartPopup
+                isOpen={isPopupOpen}
+                onClose={() => setIsPopupOpen(false)}
+                item={popupItem}
+            />
         </CartContext.Provider>
     );
 }

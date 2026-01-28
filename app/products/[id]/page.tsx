@@ -4,7 +4,7 @@ import { useState } from "react";
 import { notFound, useParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { Minus, Plus, ShoppingCart, ArrowLeft } from "lucide-react";
+import { Minus, Plus, ShoppingCart, ArrowLeft, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -24,6 +24,7 @@ export default function ProductDetailPage() {
         product?.colors?.[0]
     );
     const [showCheckout, setShowCheckout] = useState(false);
+    const [isImageHovered, setIsImageHovered] = useState(false);
     const { addToCart } = useCart();
 
     if (!product) {
@@ -41,11 +42,22 @@ export default function ProductDetailPage() {
 
     return (
         <div className="container mx-auto px-4 py-8">
-            {/* Back Button */}
-            <Link href="/products">
+            {/* Back Button - Desktop */}
+            <Link href="/products" className="hidden md:inline-block">
                 <Button variant="ghost" className="mb-6">
                     <ArrowLeft className="mr-2 h-4 w-4" />
                     Back to Products
+                </Button>
+            </Link>
+
+            {/* Back Button - Mobile (Sticky) */}
+            <Link href="/products" className="md:hidden">
+                <Button
+                    variant="ghost"
+                    className="mb-4 w-full justify-start bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20"
+                >
+                    <ArrowLeft className="mr-2 h-5 w-5" />
+                    <span className="font-semibold">Back to Products</span>
                 </Button>
             </Link>
 
@@ -53,7 +65,10 @@ export default function ProductDetailPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
                 {/* Images */}
                 <div className="space-y-4">
-                    <div className="relative aspect-square rounded-lg overflow-hidden bg-muted">
+                    <div
+                        className="relative aspect-square rounded-lg overflow-hidden bg-muted cursor-pointer"
+                        onClick={() => setIsImageHovered(true)}
+                    >
                         <Image
                             src={product.images[selectedImage]}
                             alt={product.name}
@@ -62,6 +77,39 @@ export default function ProductDetailPage() {
                             priority
                             sizes="(max-width: 1024px) 100vw, 50vw"
                         />
+
+                        {/* Click Popup - Full Image */}
+                        {isImageHovered && (
+                            <div
+                                className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm"
+                                onClick={() => setIsImageHovered(false)}
+                            >
+                                {/* Close Button */}
+                                <button
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        setIsImageHovered(false);
+                                    }}
+                                    className="absolute top-4 right-4 z-[60] bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 rounded-full p-3 transition-colors"
+                                    aria-label="Close"
+                                >
+                                    <X className="h-6 w-6 text-white" />
+                                </button>
+
+                                <div
+                                    className="relative w-[90vw] h-[90vh] max-w-6xl"
+                                    onClick={(e) => e.stopPropagation()}
+                                >
+                                    <Image
+                                        src={product.images[selectedImage]}
+                                        alt={product.name}
+                                        fill
+                                        className="object-contain"
+                                        sizes="90vw"
+                                    />
+                                </div>
+                            </div>
+                        )}
                     </div>
                     {product.images.length > 1 && (
                         <div className="grid grid-cols-4 gap-4">
@@ -69,9 +117,9 @@ export default function ProductDetailPage() {
                                 <button
                                     key={index}
                                     onClick={() => setSelectedImage(index)}
-                                    className={`relative aspect-square rounded-md overflow-hidden bg-muted border-2 transition-colors ${selectedImage === index
-                                        ? "border-primary"
-                                        : "border-transparent"
+                                    className={`relative aspect-square rounded-md overflow-hidden bg-muted border-2 transition-all hover:scale-105 ${selectedImage === index
+                                        ? "border-primary ring-2 ring-primary ring-offset-2"
+                                        : "border-transparent hover:border-primary/50"
                                         }`}
                                 >
                                     <Image
@@ -162,7 +210,7 @@ export default function ProductDetailPage() {
                             onClick={handleAddToCart}
                             disabled={!product.inStock}
                             size="lg"
-                            className="w-full"
+                            className="w-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white"
                         >
                             <ShoppingCart className="mr-2 h-5 w-5" />
                             Add to Cart
@@ -171,7 +219,7 @@ export default function ProductDetailPage() {
                             <Link href="/checkout">
                                 <Button
                                     size="lg"
-                                    className="w-full bg-primary hover:bg-primary/90"
+                                    className="w-full bg-green-500/20 hover:bg-green-500/30 backdrop-blur-md border border-green-500/30 text-green-400"
                                 >
                                     Proceed to Checkout
                                 </Button>

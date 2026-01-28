@@ -18,8 +18,12 @@ export interface CartItem extends Product {
 
 export interface CheckoutFormData {
     name: string;
+    email: string;
     phone: string;
     address: string;
     city: string;
+    province: string;
+    postalCode: string;
+    shippingMethod: 'standard' | 'express';
     notes?: string;
 }

@@ -1,10 +1,10 @@
 [
     {
         "id": "1",
-        "name": "Premium Wireless Headphones",
-        "description": "High-quality wireless headphones with active noise cancellation, 30-hour battery life, and premium sound quality. Perfect for music lovers and professionals.",
-        "price": 5500,
-        "originalPrice": 8000,
+        "name": "🧸 Small Teddy Bear (Cute & Gift Edition)",
+        "description": "This Small Teddy Bear is designed for those who love to express their feelings in a cute, simple, and elegant way. Made with ultra-soft premium fabric and high-quality stitching, it's the perfect gift for: 🎁 Birthdays, 🎁 Surprises, 🎁 Kids or someone special. ✨ Features: Ultra-soft, skin-friendly fabric, Premium quality finishing, Lightweight and easy to carry, Cute size, big emotions. 💖 Small in size, big in love.",
+        "price": 2000,
+        "originalPrice": 2500,
         "colors": [
             "Matte Black",
             "White",
@@ -15,26 +15,45 @@
             "/images/products/small-2.jpeg",
             "/images/products/small-3.jpeg"
         ],
-        "category": "Electronics",
+        "category": "Teddy Bear",
         "inStock": true,
         "featured": true
     },
     {
         "id": "2",
-        "name": "Smart Watch Pro",
-        "description": "Advanced fitness tracking, heart rate monitoring, GPS, and smartphone notifications. Water-resistant with 7-day battery life.",
-        "price": 8500,
-        "originalPrice": 12000,
+        "name": "🧸 Medium Teddy Bear – Perfect Hug Size",
+        "description": "This Medium Teddy Bear is the perfect balance between cute and impressive. Not too small, not too big — just the perfect size for hugging. With its luxury soft fur, strong stitching, and beautiful shape, it's ideal for both gifting and room decoration. ✨ Features: Super soft premium fur, Perfect cuddling size, Durable and long-lasting quality, Elegant and lovable design. 💝 A gift that brings an instant smile.",
+        "price": 3000,
+        "originalPrice": 4000,
         "colors": [
             "Black",
             "Silver",
             "Rose Gold"
         ],
         "images": [
-            "/images/products/smartwatch-1.jpg",
-            "/images/products/smartwatch-2.jpg"
+            "/images/products/medium-1.jpeg",
+            "/images/products/medium-2.jpeg"
         ],
-        "category": "Electronics",
+        "category": "Teddy Bear",
+        "inStock": true,
+        "featured": true
+    },
+    {
+        "id": "3",
+        "name": "🧸 Large Teddy Bear – Luxury Gift Edition",
+        "description": "This Large Teddy Bear is not just a toy — it's a statement of love and care. If you want to make someone feel truly special, this is the perfect premium choice. With its extra-soft premium fabric, luxury look, and impressive size, it's ideal for: ❤️ Proposals, ❤️ Anniversaries, ❤️ Special surprises. ✨ Features: Extra-soft, premium quality fur, Large size = Big impression, Luxury look and feel, Perfect for room decor and special gifts. 💎 Not just a teddy, but a memory.",
+        "price": 5500,
+        "originalPrice": 6500,
+        "colors": [
+            "Black",
+            "Silver",
+            "Rose Gold"
+        ],
+        "images": [
+            "/images/products/large-1.jpeg",
+            "/images/products/large-2.jpeg"
+        ],
+        "category": "Teddy Bear",
         "inStock": true,
         "featured": true
     }
