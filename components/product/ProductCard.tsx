@@ -65,7 +65,7 @@ export default function ProductCard({ product }: ProductCardProps) {
                 </p>
 
                 <div className="flex items-center gap-2">
-                    <span className="text-xl font-bold text-foreground">
+                    <span className="text-xl font-bold text-white">
                         {formatPrice(product.price)}
                     </span>
                     {hasDiscount && (

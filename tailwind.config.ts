@@ -78,6 +78,7 @@ const config: Config = {
                 sans: ["var(--font-space-mono)", "monospace"],
                 mono: ["var(--font-space-mono)", "monospace"],
                 heading: ["var(--font-sora)", "sans-serif"],
+                sora: ["var(--font-sora)", "sans-serif"],
             },
         },
     },

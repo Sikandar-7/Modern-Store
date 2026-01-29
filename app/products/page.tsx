@@ -7,7 +7,8 @@ import { Button } from "@/components/ui/button";
 import products from "@/lib/data/products.json";
 import { Loader2 } from "lucide-react";
 
-const categories = ["All", "Electronics", "Fashion", "Home & Living"];
+// Derive categories from products
+const categories = ["All", ...Array.from(new Set(products.map((p) => p.category)))];
 
 function ProductList() {
     const searchParams = useSearchParams();

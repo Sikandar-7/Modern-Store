@@ -15,11 +15,7 @@ export default function CartSummary() {
 
     const handleWhatsAppOrder = () => {
         const whatsappNumber = "923264379003"; // Updated Love & Joy number
-        const cartItems = cart.map((item) => ({
-            product: item,
-            quantity: item.quantity,
-        }));
-        const link = generateWhatsAppLinkForCart(whatsappNumber, cartItems, total);
+        const link = generateWhatsAppLinkForCart(whatsappNumber, cart, total);
         window.open(link, "_blank");
     };
 

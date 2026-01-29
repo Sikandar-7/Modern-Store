@@ -4,6 +4,7 @@ import "./globals.css";
 import { CartProvider } from "@/context/CartContext";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import SmoothScroll from "@/components/providers/SmoothScroll";
 
 const spaceMono = Space_Mono({
   subsets: ["latin"],
@@ -54,10 +55,11 @@ export default function RootLayout({
         <CartProvider>
           <div className="flex min-h-screen flex-col">
             {/* Announcement Bar */}
-            <div className="w-full bg-[#8cfc03] text-black text-center py-2 text-sm font-bold tracking-wide">
+            <div className="w-full bg-[#8cfc03] text-black text-center py-2 text-sm font-bold tracking-wide font-sora">
               🎉 Free Delivery on all orders above Rs. 6,000! 🚚
             </div>
             <Navbar />
+            <SmoothScroll />
             <main className="flex-1">{children}</main>
             <Footer />
           </div>

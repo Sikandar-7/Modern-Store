@@ -3,10 +3,10 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
 const instagramPosts = [
-    { id: 1, image: "/images/products/headphones-2.jpg", type: "reel" },
-    { id: 2, image: "/images/products/smartwatch-2.jpg", type: "post" },
-    { id: 3, image: "/images/products/bag-2.jpg", type: "post" },
-    { id: 4, image: "/images/products/lamp-2.jpg", type: "reel" },
+    { id: 1, image: "/images/products/large-1.jpeg", type: "reel" },
+    { id: 2, image: "/images/products/large-2.jpeg", type: "post" },
+    { id: 3, image: "/images/products/medium-1.jpeg", type: "post" },
+    { id: 4, image: "/images/products/medium-2.jpeg", type: "reel" },
 ];
 
 export default function InstagramFeed() {

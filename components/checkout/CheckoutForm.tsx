@@ -232,7 +232,10 @@ export default function CheckoutForm({ onSubmit, onShippingChange, isFreeShippin
                     <Button
                         type="submit"
                         size="lg"
-                        className="w-full"
+                        className={`w-full transition-all duration-300 ${isValid
+                                ? "bg-[#8cfc03]/20 hover:bg-[#8cfc03]/30 text-[#8cfc03] border border-[#8cfc03]/50 shadow-[0_0_15px_rgba(140,252,3,0.1)]"
+                                : ""
+                            }`}
                         disabled={!isValid}
                     >
                         Place Order via WhatsApp
