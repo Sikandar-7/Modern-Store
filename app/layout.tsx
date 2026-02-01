@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://loveandjoy.pk"),
   title: "Love & Joy - Quality Products with Cash on Delivery",
   description:
-    "Buy premium quality Teddy Bears at Love & Joy. Perfect gifts for loved ones. Cash on Delivery available on all orders.",
+    "Buy premium quality Teddy Bears at Love & Joy. Available in Small (2.5 feet), Medium (3.5 feet), and Large (5.5 feet). Perfect gifts for loved ones. Cash on Delivery available on all orders.",
   icons: {
     icon: "/icon.webp",
     apple: "/apple-icon.webp",
@@ -44,10 +44,19 @@ export const metadata: Metadata = {
     canonical: "https://loveandjoy.pk",
   },
   openGraph: {
-    title: "Love & Joy - Quality Products with Cash on Delivery",
+    title: "Love & Joy - Premium Teddy Bears | Small, Medium & Large",
     description:
-      "Buy premium quality Teddy Bears at Love & Joy. Perfect gifts for loved ones. Cash on Delivery available.",
+      "Buy premium quality Teddy Bears at Love & Joy. Available in 3 sizes: Small (2.5 feet), Medium (3.5 feet), Large (5.5 feet). Perfect gifts for loved ones. Cash on Delivery available.",
     type: "website",
+    siteName: "Love & Joy",
+    images: [
+      {
+        url: "/logo-v3.webp",
+        width: 1200,
+        height: 630,
+        alt: "Love & Joy - Premium Teddy Bears",
+      },
+    ],
   },
 };
 
