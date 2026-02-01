@@ -19,7 +19,7 @@ export default function Navbar() {
     return (
         <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 font-sora">
             <div className="container mx-auto px-4">
-                <div className="flex h-16 items-center justify-between">
+                <div className="relative flex h-16 items-center justify-between">
                     {/* Left: Brand + COD Badge */}
                     <div className="flex items-center gap-4">
                         {/* Logo */}
@@ -62,14 +62,14 @@ export default function Navbar() {
                     </div>
 
                     {/* Center: Brand Logo/Text */}
-                    <Link href="/" className="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl font-bold heading-border border-none">
+                    <Link href="/" className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl font-bold heading-border border-none">
                         Love & Joy
                     </Link>
 
                     {/* Right Side Icons */}
                     <div className="flex items-center gap-4">
                         {/* Products Link */}
-                        <Link href="/products">
+                        <Link href="/products" className="hidden md:block">
                             <Button variant="ghost" className="text-sm font-medium hover:text-primary">
                                 Products
                             </Button>

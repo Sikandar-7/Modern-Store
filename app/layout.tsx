@@ -26,24 +26,27 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://loveandjoy.pk"),
   title: "Love & Joy - Quality Products with Cash on Delivery",
   description:
-    "Shop the latest electronics, fashion, and home & living products at Love & Joy. Cash on Delivery available on all orders. Fast shipping and quality guaranteed.",
+    "Buy premium quality Teddy Bears at Love & Joy. Perfect gifts for loved ones. Cash on Delivery available on all orders.",
   icons: {
     icon: "/icon.webp",
     apple: "/apple-icon.webp",
   },
   keywords: [
-    "online store",
+    "Teddy Bears",
+    "Soft Toys",
+    "Gifts",
     "Love & Joy",
     "cash on delivery",
-    "electronics",
-    "fashion",
-    "home living",
-    "COD",
+    "online store pakistan",
+    "kids toys",
   ],
+  alternates: {
+    canonical: "https://loveandjoy.pk",
+  },
   openGraph: {
     title: "Love & Joy - Quality Products with Cash on Delivery",
     description:
-      "Shop the latest electronics, fashion, and home & living products at Love & Joy. Cash on Delivery available.",
+      "Buy premium quality Teddy Bears at Love & Joy. Perfect gifts for loved ones. Cash on Delivery available.",
     type: "website",
   },
 };

@@ -77,15 +77,15 @@ export default function ProductCard({ product }: ProductCardProps) {
             </CardContent>
 
             <CardFooter className="p-5 pt-0 gap-2 mt-auto">
-                <Link href={`/products/${product.slug || product.id}`} className="w-full">
-                    <Button
-                        className="w-full gap-2 bg-white/10 hover:bg-white/20 text-white backdrop-blur-sm border-none h-11 rounded-xl transition-colors"
-                        disabled={!product.inStock}
-                    >
+                <Button
+                    asChild
+                    className="w-full gap-2 bg-white/10 hover:bg-white/20 text-white backdrop-blur-sm border-none h-11 rounded-xl transition-colors"
+                >
+                    <Link href={`/products/${product.slug || product.id}`}>
                         <Eye className="h-5 w-5" />
                         <span className="text-sm font-semibold">View Product</span>
-                    </Button>
-                </Link>
+                    </Link>
+                </Button>
             </CardFooter>
         </Card>
     );

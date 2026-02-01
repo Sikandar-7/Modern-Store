@@ -109,7 +109,7 @@ export default function HeroSection() {
                                                 priority
                                             />
                                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-6 text-white text-left pointer-events-none">
-                                                <h3 className="text-2xl font-bold mb-1 heading-border">{product.name}</h3>
+                                                <h2 className="text-2xl font-bold mb-1 heading-border">{product.name}</h2>
                                                 <p className="text-white/90 font-medium">{product.tagline}</p>
                                             </div>
                                         </Card>
