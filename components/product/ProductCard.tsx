@@ -41,7 +41,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             </Badge>
 
             {/* Image Container */}
-            <Link href={`/products/${product.id}`} className="block relative aspect-square overflow-hidden bg-transparent">
+            <Link href={`/products/${product.slug || product.id}`} className="block relative aspect-square overflow-hidden bg-transparent">
                 {/* Apple-like soft glow behind image */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
@@ -55,7 +55,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
             {/* Content */}
             <CardContent className="p-5 space-y-3 flex-1">
-                <Link href={`/products/${product.id}`}>
+                <Link href={`/products/${product.slug || product.id}`}>
                     <h3 className="line-clamp-1 text-lg font-medium transition-colors heading-border border-white/20">
                         {product.name}
                     </h3>
@@ -77,7 +77,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             </CardContent>
 
             <CardFooter className="p-5 pt-0 gap-2 mt-auto">
-                <Link href={`/products/${product.id}`} className="w-full">
+                <Link href={`/products/${product.slug || product.id}`} className="w-full">
                     <Button
                         className="w-full gap-2 bg-white/10 hover:bg-white/20 text-white backdrop-blur-sm border-none h-11 rounded-xl transition-colors"
                         disabled={!product.inStock}

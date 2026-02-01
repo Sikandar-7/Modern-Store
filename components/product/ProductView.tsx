@@ -1,23 +1,35 @@
 "use client";
 
 import { useState } from "react";
-import { notFound, useParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { Minus, Plus, ShoppingCart, ArrowLeft, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
 import WhatsAppButton from "@/components/whatsapp/WhatsAppButton";
 import ProductCard from "@/components/product/ProductCard";
 import { useCart } from "@/context/CartContext";
 import { formatPrice } from "@/lib/utils";
-import products from "@/lib/data/products.json";
+import { Product } from "@/types";
 
-export default function ProductDetailPage() {
-    const params = useParams();
-    const id = typeof params?.id === 'string' ? params.id : '';
-    const product = products.find((p) => p.id === id);
+interface ProductViewProps {
+    product: Product;
+    relatedProducts: Product[];
+}
+
+/**
+ * [CLIENT COMPONENT] - ProductView
+ * This component runs in the user's browser (Client-Side).
+ * 
+ * PURPOSE:
+ * It handles all user interactions that require JavaScript, such as:
+ * - Changing Quantity (+/-)
+ * - Selecting Colors
+ * - Clicking Images (Lightbox/Zoom)
+ * - Adding to Cart
+ */
+export default function ProductView({ product, relatedProducts }: ProductViewProps) {
+    // State to manage user selections
     const [quantity, setQuantity] = useState(1);
     const [selectedImage, setSelectedImage] = useState(0);
     const [selectedColor, setSelectedColor] = useState<string | undefined>(
@@ -25,23 +37,19 @@ export default function ProductDetailPage() {
     );
     const [showCheckout, setShowCheckout] = useState(false);
     const [isImageHovered, setIsImageHovered] = useState(false);
+
+    // Access global cart context
     const { addToCart } = useCart();
-
-    if (!product) {
-        notFound();
-    }
-
-    const relatedProducts = products
-        .filter((p) => p.category === product.category && p.id !== id)
-        .slice(0, 4);
 
     const handleAddToCart = () => {
         addToCart(product, quantity, selectedColor);
+        // Show checkout button after successful add
         setShowCheckout(true);
     };
 
     return (
         <div className="container mx-auto px-4 py-8">
+            {/* ... Rest of the component code ... */}
             {/* Back Button - Desktop */}
             <Link href="/products" className="hidden md:inline-block">
                 <Button variant="ghost" className="mb-6">
@@ -61,30 +69,31 @@ export default function ProductDetailPage() {
                 </Button>
             </Link>
 
-            {/* Product Details */}
+            {/* Product Details Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-                {/* Images */}
+
+                {/* 1. Image Gallery Section */}
                 <div className="space-y-4">
+                    {/* Main Active Image */}
                     <div
                         className="relative aspect-square rounded-lg overflow-hidden bg-muted cursor-pointer"
                         onClick={() => setIsImageHovered(true)}
                     >
                         <Image
                             src={product.images[selectedImage]}
-                            alt={product.name}
+                            alt={`${product.name} - View ${selectedImage + 1}`}
                             fill
                             className="object-cover"
                             priority
                             sizes="(max-width: 1024px) 100vw, 50vw"
                         />
 
-                        {/* Click Popup - Full Image */}
+                        {/* Lightbox Modal (Full Screen Image View) */}
                         {isImageHovered && (
                             <div
                                 className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm"
                                 onClick={() => setIsImageHovered(false)}
                             >
-                                {/* Close Button */}
                                 <button
                                     onClick={(e) => {
                                         e.stopPropagation();
@@ -111,6 +120,8 @@ export default function ProductDetailPage() {
                             </div>
                         )}
                     </div>
+
+                    {/* Thumbnail List */}
                     {product.images.length > 1 && (
                         <div className="grid grid-cols-4 gap-4">
                             {product.images.map((image, index) => (
@@ -124,7 +135,7 @@ export default function ProductDetailPage() {
                                 >
                                     <Image
                                         src={image}
-                                        alt={`${product.name} ${index + 1}`}
+                                        alt={`${product.name} thumbnail ${index + 1}`}
                                         fill
                                         className="object-cover"
                                         sizes="150px"
@@ -135,7 +146,7 @@ export default function ProductDetailPage() {
                     )}
                 </div>
 
-                {/* Product Info */}
+                {/* 2. Product Information & Actions */}
                 <div className="space-y-6">
                     <div>
                         <Badge variant="secondary" className="mb-3">
@@ -204,7 +215,7 @@ export default function ProductDetailPage() {
                         </div>
                     </div>
 
-                    {/* Action Buttons */}
+                    {/* Action Buttons (Cart, Checkout, WhatsApp) */}
                     <div className="space-y-3 pt-4">
                         <Button
                             onClick={handleAddToCart}
@@ -242,10 +253,10 @@ export default function ProductDetailPage() {
                 </div>
             </div>
 
-            {/* Related Products */}
+            {/* Related Products / Cross-Selling Section */}
             {relatedProducts.length > 0 && (
                 <div>
-                    <h2 className="text-3xl font-bold mb-6">Related Products</h2>
+                    <h2 className="text-3xl font-bold mb-6">You Might Also Like</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                         {relatedProducts.map((relatedProduct) => (
                             <ProductCard key={relatedProduct.id} product={relatedProduct} />

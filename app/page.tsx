@@ -7,7 +7,7 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import HeroSection from "@/components/home/HeroSection";
 import TrustSection from "@/components/home/TrustSection";
-import InstagramFeed from "@/components/home/InstagramFeed";
+import SocialMediaFeed from "@/components/home/SocialMediaFeed";
 
 export default function Home() {
   const featuredProducts = products.filter((p) => p.featured).slice(0, 4);
@@ -55,8 +55,8 @@ export default function Home() {
       {/* 3. Trust Badges */}
       <TrustSection />
 
-      {/* 4. Instagram Feed */}
-      <InstagramFeed />
+      {/* 4. Social Media Feed */}
+      <SocialMediaFeed />
     </div>
   );
 }

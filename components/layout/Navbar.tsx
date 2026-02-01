@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ShoppingCart, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -8,7 +9,7 @@ import { useCart } from "@/context/CartContext";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const categories = ["Electronics", "Fashion", "Home & Living"];
+const categories = ["All Products", "Teddy Bears"];
 
 export default function Navbar() {
     const { getCartCount } = useCart();
@@ -21,9 +22,17 @@ export default function Navbar() {
                 <div className="flex h-16 items-center justify-between">
                     {/* Left: Brand + COD Badge */}
                     <div className="flex items-center gap-4">
-                        {/* Left Brand */}
-                        <Link href="/" className="text-2xl font-bold">
-                            Love & Joy
+                        {/* Logo */}
+                        <Link href="/" className="font-bold text-2xl tracking-tighter heading-border border-none flex-shrink-0">
+                            <div className="relative h-12 w-32 md:h-14 md:w-40">
+                                <Image
+                                    src="/logo-v3.webp"
+                                    alt="Love & Joy"
+                                    fill
+                                    className="object-contain object-left"
+                                    priority
+                                />
+                            </div>
                         </Link>
 
                         {/* COD Badge */}
@@ -129,7 +138,7 @@ export default function Navbar() {
                             {categories.map((category) => (
                                 <Link
                                     key={category}
-                                    href={`/products?category=${encodeURIComponent(category)}`}
+                                    href={category === "All Products" ? "/products" : `/products?category=${encodeURIComponent("Teddy Bear")}`}
                                     className="text-sm font-medium transition-colors hover:text-primary py-2"
                                     onClick={() => setMobileMenuOpen(false)}
                                 >

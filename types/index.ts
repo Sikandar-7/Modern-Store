@@ -1,5 +1,7 @@
 export interface Product {
     id: string;
+    slug?: string;
+    seoDescription?: string;
     name: string;
     description: string;
     price: number;

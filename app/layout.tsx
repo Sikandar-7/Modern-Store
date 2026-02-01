@@ -23,9 +23,14 @@ const robotoCondensed = Roboto_Condensed({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://loveandjoy.pk"),
   title: "Love & Joy - Quality Products with Cash on Delivery",
   description:
     "Shop the latest electronics, fashion, and home & living products at Love & Joy. Cash on Delivery available on all orders. Fast shipping and quality guaranteed.",
+  icons: {
+    icon: "/icon.webp",
+    apple: "/apple-icon.webp",
+  },
   keywords: [
     "online store",
     "Love & Joy",
