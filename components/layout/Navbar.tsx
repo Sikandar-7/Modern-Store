@@ -17,14 +17,14 @@ export default function Navbar() {
     const cartCount = getCartCount();
 
     return (
-        <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 font-sora">
+        <nav className="sticky top-0 z-50 w-full border-b border-white/10 bg-black/20 backdrop-blur-xl supports-[backdrop-filter]:bg-black/10 font-sora shadow-sm">
             <div className="container mx-auto px-4">
                 <div className="relative flex h-16 items-center justify-between">
                     {/* Left: Brand + COD Badge */}
                     <div className="flex items-center gap-4">
                         {/* Logo */}
                         <Link href="/" className="font-bold text-2xl tracking-tighter heading-border border-none flex-shrink-0">
-                            <div className="relative h-12 w-32 md:h-14 md:w-40">
+                            <div className="relative h-12 w-32 md:h-14 md:w-40 drop-shadow-md">
                                 <Image
                                     src="/logo-v3.webp"
                                     alt="Love & Joy"
@@ -36,7 +36,7 @@ export default function Navbar() {
                         </Link>
 
                         {/* COD Badge */}
-                        <div className="hidden sm:inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/10 px-3 py-1.5 rounded-full shadow-sm hover:bg-white/20 transition-colors cursor-default">
+                        <div className="hidden sm:inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-3 py-1.5 rounded-full shadow-inner hover:bg-white/20 transition-all cursor-default">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="16"
@@ -47,7 +47,7 @@ export default function Navbar() {
                                 strokeWidth="2"
                                 strokeLinecap="round"
                                 strokeLinejoin="round"
-                                className="lucide lucide-truck"
+                                className="lucide lucide-truck drop-shadow-[0_0_8px_rgba(140,252,3,0.8)]"
                             >
                                 <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2" />
                                 <path d="M15 18H9" />
@@ -55,14 +55,14 @@ export default function Navbar() {
                                 <circle cx="17" cy="18" r="2" />
                                 <circle cx="7" cy="18" r="2" />
                             </svg>
-                            <span className=" text-[#8cfc03] text-xs animate-pulse-slow cod-text">
+                            <span className=" text-[#8cfc03] text-xs animate-pulse-slow cod-text drop-shadow-[0_0_2px_rgba(140,252,3,0.8)]">
                                 COD available
                             </span>
                         </div>
                     </div>
 
                     {/* Center: Brand Logo/Text */}
-                    <Link href="/" className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl font-bold heading-border border-none">
+                    <Link href="/" className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl font-bold heading-border border-none drop-shadow-lg">
                         Love & Joy
                     </Link>
 
@@ -70,7 +70,7 @@ export default function Navbar() {
                     <div className="flex items-center gap-4">
                         {/* Products Link */}
                         <Link href="/products" className="hidden md:block">
-                            <Button variant="ghost" className="text-sm font-medium hover:text-primary">
+                            <Button variant="ghost" className="text-sm font-medium hover:text-primary hover:bg-white/10 transition-all">
                                 Products
                             </Button>
                         </Link>
@@ -80,7 +80,7 @@ export default function Navbar() {
                             href="https://wa.me/923264379003"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="hidden sm:flex items-center gap-2 text-sm font-medium text-green-600 hover:text-green-700 transition-colors"
+                            className="hidden sm:flex items-center gap-2 text-sm font-medium text-green-400 hover:text-green-300 transition-colors drop-shadow"
                         >
                             <svg
                                 className="w-5 h-5"
@@ -95,12 +95,12 @@ export default function Navbar() {
 
                         {/* Cart */}
                         <Link href="/cart">
-                            <Button variant="ghost" size="icon" className="relative">
+                            <Button variant="ghost" size="icon" className="relative hover:bg-white/10 transition-all">
                                 <ShoppingCart className="h-5 w-5" />
                                 {cartCount > 0 && (
                                     <Badge
                                         variant="destructive"
-                                        className="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center p-0 text-xs"
+                                        className="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center p-0 text-xs shadow-md"
                                     >
                                         {cartCount}
                                     </Badge>
@@ -112,7 +112,7 @@ export default function Navbar() {
                         <Button
                             variant="ghost"
                             size="icon"
-                            className="md:hidden"
+                            className="md:hidden hover:bg-white/10 transition-all"
                             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                         >
                             {mobileMenuOpen ? (
@@ -132,7 +132,7 @@ export default function Navbar() {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden border-t"
+                        className="md:hidden border-t border-white/10 bg-black/40 backdrop-blur-xl"
                     >
                         <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
                             {categories.map((category) => (
