@@ -29,7 +29,7 @@ output_files = [
     r"c:\Users\sikan\Desktop\New folder (2)\Modern-Store\app\icon.webp",
     r"c:\Users\sikan\Desktop\New folder (2)\Modern-Store\public\icon.webp",
     r"c:\Users\sikan\Desktop\New folder (2)\Modern-Store\public\apple-icon.webp",
-     r"c:\Users\sikan\Desktop\New folder (2)\Modern-Store\public\logo-v3.webp"
+    # r"c:\Users\sikan\Desktop\New folder (2)\Modern-Store\public\logo-v3.webp"
 ]
 
 make_circle(input_file, output_files)
