@@ -27,10 +27,7 @@ export const metadata: Metadata = {
   title: "Love & Joy - Quality Products with Cash on Delivery",
   description:
     "Buy premium quality Teddy Bears at Love & Joy. Available in Small (2.5 feet), Medium (3.5 feet), and Large (5.5 feet). Perfect gifts for loved ones. Cash on Delivery available on all orders.",
-  icons: {
-    icon: "/apple-icon.webp",
-    apple: "/apple-icon.webp",
-  },
+
   keywords: [
     "Teddy Bears",
     "Soft Toys",
