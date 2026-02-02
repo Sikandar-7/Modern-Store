@@ -24,7 +24,7 @@ def make_circle(input_path, output_paths):
         print(f"Error: {e}")
 
 # Paths
-input_file = r"C:\Users\sikan\Desktop\WebP\xx.webp"
+input_file = r"C:\Users\sikan\Desktop\WebP\ss.webp"
 output_files = [
     r"c:\Users\sikan\Desktop\New folder (2)\Modern-Store\app\icon.webp",
     r"c:\Users\sikan\Desktop\New folder (2)\Modern-Store\public\icon.webp",
