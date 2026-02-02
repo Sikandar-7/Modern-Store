@@ -127,8 +127,8 @@
   background-image: url("/images/background.jpeg");
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
-  /* Ensures true wallpaper feel */
+  /* background-attachment: fixed; - REMOVED for iOS compatibility */
+  /* fixed position handles the stickiness already */
 
   /* Add a sophisticated dark overlay to ensure text pops */
   box-shadow: inset 0 0 0 100vmax rgba(0, 0, 0, 0.75);
