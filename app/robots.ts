@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         },
         sitemap: process.env.NEXT_PUBLIC_BASE_URL
             ? `${process.env.NEXT_PUBLIC_BASE_URL}/sitemap.xml`
-            : 'https://loveandjoy.pk/sitemap.xml', // Fallback or update with actual domain
+            : 'https://loveandjoy.vercel.app/sitemap.xml', // Fallback or update with actual domain
     };
 }

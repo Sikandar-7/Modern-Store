@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import products from "@/lib/data/products.json";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://loveandjoy.pk';
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://loveandjoy.vercel.app';
 
     // Static pages
     const routes = [

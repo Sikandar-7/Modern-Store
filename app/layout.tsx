@@ -23,7 +23,7 @@ const robotoCondensed = Roboto_Condensed({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://loveandjoy.pk"),
+  metadataBase: new URL("https://loveandjoy.vercel.app"),
   title: "Love & Joy - Quality Products with Cash on Delivery",
   description:
     "Buy premium quality Teddy Bears at Love & Joy. Available in Small (2.5 feet), Medium (3.5 feet), and Large (5.5 feet). Perfect gifts for loved ones. Cash on Delivery available on all orders.",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     "kids toys",
   ],
   alternates: {
-    canonical: "https://loveandjoy.pk",
+    canonical: "https://loveandjoy.vercel.app",
   },
   openGraph: {
     title: "Love & Joy - Premium Teddy Bears | Small, Medium & Large",
