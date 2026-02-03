@@ -56,7 +56,7 @@ function generateJsonLd(product: any) {
             "priceCurrency": "PKR",
             "price": product.price,
             "availability": product.inStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
-            "url": `https://loveandjoy.pk/products/${product.slug || product.id}`
+            "url": `https://loveandjoy.vercel.app/products/${product.slug || product.id}`
         }
     };
 }

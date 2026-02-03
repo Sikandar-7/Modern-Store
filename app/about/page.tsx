@@ -20,8 +20,8 @@ const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Love & Joy",
-    "url": "https://loveandjoy.pk",
-    "logo": "https://loveandjoy.pk/logo-v3.webp",
+    "url": "https://loveandjoy.vercel.app",
+    "logo": "https://loveandjoy.vercel.app/logo-v3.webp",
     "sameAs": [
         "https://www.facebook.com/profile.php?id=61587101492750",
         "https://www.instagram.com/loveandjoy.pk/?hl=en",

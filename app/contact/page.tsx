@@ -21,12 +21,15 @@ const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Store",
     "name": "Love & Joy",
-    "image": "https://loveandjoy.pk/logo-v3.webp",
-    "telephone": "+923264379003",
-    "email": "sikandar8sa@gmail.com",
+    "image": "https://loveandjoy.vercel.app/logo-v3.webp",
+    "telephone": "+92-326-4379003",
+    "email": "contact@loveandjoy.vercel.app",
     "address": {
         "@type": "PostalAddress",
+        "streetAddress": "Street 5, Cavalary Ground",
         "addressLocality": "Lahore",
+        "addressRegion": "Punjab",
+        "postalCode": "54000",
         "addressCountry": "PK"
     },
     "openingHoursSpecification": {
