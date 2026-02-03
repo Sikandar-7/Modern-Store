@@ -78,7 +78,7 @@ export default function CheckoutForm({ onSubmit, onShippingChange, isFreeShippin
                             id="email"
                             type="email"
                             {...register("email")}
-                            placeholder="john@example.com"
+                            placeholder="sikandar@example.com"
                             className="bg-white/5 border-white/20 text-white placeholder:text-gray-400"
                         />
                         {errors.email && (
@@ -152,7 +152,7 @@ export default function CheckoutForm({ onSubmit, onShippingChange, isFreeShippin
                         <Input
                             id="postalCode"
                             {...register("postalCode")}
-                            placeholder="75500"
+                            placeholder="54000"
                             className="bg-white/5 border-white/20 text-white placeholder:text-gray-400"
                         />
                         {errors.postalCode && (
@@ -233,8 +233,8 @@ export default function CheckoutForm({ onSubmit, onShippingChange, isFreeShippin
                         type="submit"
                         size="lg"
                         className={`w-full transition-all duration-300 ${isValid
-                                ? "bg-[#8cfc03]/20 hover:bg-[#8cfc03]/30 text-[#8cfc03] border border-[#8cfc03]/50 shadow-[0_0_15px_rgba(140,252,3,0.1)]"
-                                : ""
+                            ? "bg-[#8cfc03]/20 hover:bg-[#8cfc03]/30 text-[#8cfc03] border border-[#8cfc03]/50 shadow-[0_0_15px_rgba(140,252,3,0.1)]"
+                            : ""
                             }`}
                         disabled={!isValid}
                     >
