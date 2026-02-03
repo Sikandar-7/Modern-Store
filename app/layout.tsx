@@ -45,6 +45,12 @@ export const metadata: Metadata = {
     "cash on delivery",
     "online store pakistan",
     "kids toys",
+    "Teddy bear price in Pakistan",
+    "Giant teddy bear Lahore",
+    "Birthday gift for girls",
+    "Big size teddy bear online",
+    "Send gifts to Pakistan",
+    "Premium stuffed toys",
   ],
   alternates: {
     canonical: "https://loveandjoy.vercel.app",
